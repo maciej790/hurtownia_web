@@ -1,7 +1,11 @@
 <?php
-require_once '../../../db/DatabaseConnection.php';
-require_once '../../../middleware/Sessions.php';
-require_once '../../../controller/Auth.php';
+require_once __DIR__ . '/../../../db/DatabaseConnection.php';
+require_once __DIR__ . '/../../../middleware/Sessions.php';
+require_once __DIR__ . '/../../../controller/Auth.php';
+require_once __DIR__ . '/../../../middleware/preventUrl.php';
+
+checkUserAccess('admin');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

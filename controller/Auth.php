@@ -30,13 +30,14 @@ class Auth extends DatabaseConnection
                 'rola' => $result['rola']
             ];
             createSession('user', $this->user);
-            return $this->user;
             $this->message = null;
+            redirectUserByRole($this->user['rola']);
         }
     }
 
     public function logOut()
     {
         destroySession('user');
+        header("Location: /hurtownia");
     }
 }
